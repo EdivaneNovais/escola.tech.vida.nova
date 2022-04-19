@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 pedido por delivery
+=======
+Meu segundo commit
+>>>>>>> 18dd9fde05b7bcf321522f4f3dbb584ab2852d6f
+
