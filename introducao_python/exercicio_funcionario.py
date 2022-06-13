@@ -1,7 +1,7 @@
 def dados ():
-    nome1 = str(input("digite seu primeiro nome:")).upper()
-    sobrenome1 = str(input("digite seu sobrenome:")).upper()
-    cargo1 = str(input("digite o cargo:")).upper()
+    nome1 = input("digite seu primeiro nome:").upper()
+    sobrenome1 = input("digite seu sobrenome:").upper()
+    cargo1 = input("digite o cargo:").upper()
 
     vetordados = [nome1, sobrenome1, cargo1]
 
