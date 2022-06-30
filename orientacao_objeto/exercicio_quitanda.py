@@ -1,3 +1,23 @@
+# Quando você quer fazer uma função, é sempre bom definir ela antes do seu código, assim lá embaixo você só precisa chamá-la
+def calculo_troco (divida, valor_pago):
+    troco = valor_pago - divida
+    # Note que a função recebe como parâmetro "divida" e "valor_pago"
+    # Por isso é melhor usar essas variáveis do que as que você definiu fora da função
+    # Trocamos "total" por "divida" e "dinheirorecebido" por "valor_pago"
+    if divida == valor_pago :
+        print("o dinheiro a pagar é igual ao dinheiro recebido")
+    if valor_pago < divida:
+        print("ERRO!!!\nO valor recebido é inferior ao valor a pagar")
+    else:
+        troco = valor_pago - divida
+        print(f"o valor do troco é de {(troco)}0")
+
+        for cedula in [20, 5, 1]:
+            quantidade = troco // cedula
+            troco = troco % cedula
+            if quantidade > 0:
+                print(f"{int(quantidade)} nota(s) de R$ {cedula},00")
+
 precos = {
     'morango': 7,
     'melancia' : 20,
@@ -31,20 +51,5 @@ while resposta != "n":
     
     if resposta == 'n':
         dinheirorecebido = float(input("dinheiro recebido:"))
-        def calculo_troco (divida, valor_pago):
-            troco = valor_pago - divida
-            if total == dinheirorecebido :
-                print("o dinheiro a pagar é igual ao dinheiro recebido")
-            if dinheirorecebido < total:
-                print("ERRO!!!\nO valor recebido é inferior ao valor a pagar")
-            else:
-                troco = dinheirorecebido - total
-                print(f"o valor do troco é de {(troco)}0")
-
-                for cedula in [20, 5, 1]:
-                    quantidade = troco // cedula
-                    troco = troco % cedula
-                    if quantidade > 0:
-                        print(f"{int(quantidade)} nota(s) de R$ {cedula},00")
     
         calculo = calculo_troco(total,dinheirorecebido)
