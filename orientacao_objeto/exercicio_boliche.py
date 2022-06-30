@@ -25,14 +25,17 @@ numero_dos_pinos = {
 
 x=0
 while x < 10: 
+    # Gostei que você usou o random para sortear pinos. 
+    # Mas você reparou que ele sorteia apenas um por vez? Se a ideia fosse sortear mais de um por vez, como você faria?
     jogada = [random.randint(1, 10)]
     for pino in jogada:
         posicao = numero_dos_pinos[str(pino)]
         if pista[posicao] == "_":
-            x = x - 1
             print("Você não derrubou nada")
         else:
             pista[posicao] = "_"          
-    x = x + 1
+            # Veja que, se mudarmos esse "x = x + 1" para cá, ele só será somado caso o pino seja de fato derrubado. 
+            # Assim você não precisa subtrair 1 no caso anterior (por isso removi aquela expressão)
+            x = x + 1
 
     mostra_pista(pista) 
