@@ -21,25 +21,30 @@ numero_dos_pinos = {
     "7": 0,
     "8": 2,
     "9": 4,
-    "10": 6 }
+    "10": 6
+}
 
 x=0
+
 while x < 10:
-    sorteio = randint(1, 4) #defini a quantidade de numeros que serão sorteados
+    sorteio = randint(1, 4) #coloquei a quantidade de numeros que serão sorteados
     jogada = choices([1,2,3,4,5,6,7,8,9,10], k = sorteio)
+    contador = 0
         
     for pino in jogada:
-        pinos_derrubados = 0
         posicao = numero_dos_pinos[str(pino)]
         if pista[posicao] == "_":
-            print("Você não derrubou")
+            pass
+
         else:
             pista[posicao] = "_"  
-            print('Você acertou o pino, parabéns') 
-             
-            x = x + 1
+            contador = contador + 1 
 
-    mostra_pista(pista) 
+            x = x + 1      
+
+    mostra_pista(pista)
+    print(f'Você derrubou {contador} pino(s)')   
+    
+    
 
 print("Você derrubou todos os pinos")
-  
