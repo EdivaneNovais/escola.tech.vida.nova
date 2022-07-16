@@ -16,6 +16,10 @@ def total_palavras():
         print('Total de palavras:', (total_palavras))
 
 
+# Aqui você também usou a lógica certinho.
+# Você estabeleceu quais seriam as letras que você queria contar (alfabeto)
+# E depois criou uma lista com um contador para cada letra, todos começando em zero
+# Aqui a dica é menor, mas no geral é isso mesmo!
 def total_letras_alfabeto():
     with open ('palavras.txt', 'r', encoding='utf-8') as arquivo:
         contador = []
@@ -24,7 +28,10 @@ def total_letras_alfabeto():
             contador.append(0)
         for linha in arquivo:
             for elem in linha.lower():
-                if 'a' <= elem <= 'z':
+                # if 'a' <= elem <= 'z':  
+                # A única dica é aqui. Ao invés de verificar se a letra está entre a e z dá pra fazer assim: 
+                if elem in alfabeto:
+                    # Isso garante que você possa contar outras letras também caso queira, como "á" e "õ", desde que você inclua elas na variável alfabeto
                     index = alfabeto.index(elem)#mostra onde esta a letra na string
                     contador[index] += 1
         for elemento in range(26):
