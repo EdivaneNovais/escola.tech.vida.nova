@@ -41,7 +41,8 @@ def total_letras_alfabeto():
 # Perfeito! 
 def palavras_iniciais_nome():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
-    arquivo_letra = open ('palavra_edi.txt', 'w')
+    # A única dica é incluir o encoding na hora de escrever um arquivo também 
+    arquivo_letra = open ('palavra_edi.txt', 'w', encoding='utf-8')
     texto = arquivo.read()
     lista_texto = texto.lower().split('\n')
     for palavra in lista_texto:
@@ -49,6 +50,7 @@ def palavras_iniciais_nome():
             arquivo_letra.write(palavra)
             arquivo_letra.write('\n')
     arquivo.close()
+    arquivo_letra.close()  # E não esquecer de fechar todos os arquivos que se abre
 
             
 def palavras_palindromo():
