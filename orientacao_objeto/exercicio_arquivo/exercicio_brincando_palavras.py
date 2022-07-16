@@ -1,12 +1,25 @@
+# Neste aqui a sua lógica está certa. Só posso te dar uma dica:
+#     Vejo que você está armazenando todas as palavras em uma lista e depois 
+#     você obtém a conta usando a função len. Isso funciona, mas pense o seguinte:
+#     Como você só quer contar as palavras, você não precisa armazená-las em algum lugar,
+#     já que isso consome memória (e dependendo da qtd de palavras pode até deixar seu código mais lento).
+#     Você literalmente só precisa contá-las. Veja abaixo
 def total_palavras():
     with open ('palavras.txt', 'r', encoding='utf-8') as arquivo:
-        palavras = []
+        # palavras = []
+        total_palavras = 0  # Trocamos a lista por uma variável de contagem
         for linha in arquivo:
-            linha = linha.strip()
-            palavras.append(linha)
-        print('Total de palavras:', (len(palavras)))
+            linha = linha.strip()  # Como só estamos contando, você não precisa se preocupar em usar o strip. Isso é só para quando queremos processar e usar a string de fato
+            # palavras.append(linha)
+            total_palavras = total_palavras + 1  # Para cada linha do arquivo adicionamos 1 na contgem
+        # print('Total de palavras:', (len(palavras)))
+        print('Total de palavras:', (total_palavras))
 
 
+# Aqui você também usou a lógica certinho.
+# Você estabeleceu quais seriam as letras que você queria contar (alfabeto)
+# E depois criou uma lista com um contador para cada letra, todos começando em zero
+# Aqui a dica é menor, mas no geral é isso mesmo!
 def total_letras_alfabeto():
     with open ('palavras.txt', 'r', encoding='utf-8') as arquivo:
         contador = []
@@ -15,16 +28,21 @@ def total_letras_alfabeto():
             contador.append(0)
         for linha in arquivo:
             for elem in linha.lower():
-                if 'a' <= elem <= 'z':
+                # if 'a' <= elem <= 'z':  
+                # A única dica é aqui. Ao invés de verificar se a letra está entre a e z dá pra fazer assim: 
+                if elem in alfabeto:
+                    # Isso garante que você possa contar outras letras também caso queira, como "á" e "õ", desde que você inclua elas na variável alfabeto
                     index = alfabeto.index(elem)#mostra onde esta a letra na string
                     contador[index] += 1
         for elemento in range(26):
             print(f'Quantidade da letra {alfabeto[elemento]} é: {contador[elemento]}')
 
 
+# Perfeito! 
 def palavras_iniciais_nome():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
-    arquivo_letra = open ('palavra_edi.txt', 'w')
+    # A única dica é incluir o encoding na hora de escrever um arquivo também 
+    arquivo_letra = open ('palavra_edi.txt', 'w', encoding='utf-8')
     texto = arquivo.read()
     lista_texto = texto.lower().split('\n')
     for palavra in lista_texto:
@@ -32,20 +50,31 @@ def palavras_iniciais_nome():
             arquivo_letra.write(palavra)
             arquivo_letra.write('\n')
     arquivo.close()
+    arquivo_letra.close()  # E não esquecer de fechar todos os arquivos que se abre
 
             
 def palavras_palindromo():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
     arquivo_letra = open ('palavra_palíndromo.txt', 'w')
-    texto = arquivo.read()
+    # Vi que você usou o .read() no anterior também
+    # Não tem problema, mas tenha em mente que esse cara lê todo o arquivo de uma vez
+    # Por isso você tem que usar o split pra separar as palavras depois.
+    # Tente sempre usar o with open pra ir iterando linha a linha. Acredite, é mais rápido e econômico
+    texto = arquivo.read()  
     lista_texto = texto.lower().split('\n')
     for palavra in lista_texto:
-        palavra_invertida = palavra[::-1]
+        palavra_invertida = palavra[::-1]  # Boa lembrança da aula!
         if palavra_invertida == palavra:  
             arquivo_letra.write(palavra)
             arquivo_letra.write('\n')
     arquivo.close()
+    arquivo_letra.close() # Não esquecer de fechar o outro arquivo também
 
+# Vi que você empacou aqui, mas veja.. você tem a lógica que precisa nos outros exercícios.
+# Você precisa de um contador para cada letra, e precisa verificar qual a primeira letra de cada palavra
+# Você tem um contator por letra na função total_letras_alfabeto 
+# E você consegue extrair a primeira letra como extraiu as três primeiras letras em palavras_iniciais_nome
+# A solução está bem perto, é juntar as lógicas.
 def total_letras_iniciais():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
     texto = arquivo.read()
