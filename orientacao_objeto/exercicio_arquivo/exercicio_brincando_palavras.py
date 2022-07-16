@@ -56,14 +56,19 @@ def palavras_iniciais_nome():
 def palavras_palindromo():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
     arquivo_letra = open ('palavra_palíndromo.txt', 'w')
-    texto = arquivo.read()
+    # Vi que você usou o .read() no anterior também
+    # Não tem problema, mas tenha em mente que esse cara lê todo o arquivo de uma vez
+    # Por isso você tem que usar o split pra separar as palavras depois.
+    # Tente sempre usar o with open pra ir iterando linha a linha. Acredite, é mais rápido e econômico
+    texto = arquivo.read()  
     lista_texto = texto.lower().split('\n')
     for palavra in lista_texto:
-        palavra_invertida = palavra[::-1]
+        palavra_invertida = palavra[::-1]  # Boa lembrança da aula!
         if palavra_invertida == palavra:  
             arquivo_letra.write(palavra)
             arquivo_letra.write('\n')
     arquivo.close()
+    arquivo_letra.close() # Não esquecer de fechar o outro arquivo também
 
 def total_letras_iniciais():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
