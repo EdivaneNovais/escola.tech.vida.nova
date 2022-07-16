@@ -70,6 +70,11 @@ def palavras_palindromo():
     arquivo.close()
     arquivo_letra.close() # Não esquecer de fechar o outro arquivo também
 
+# Vi que você empacou aqui, mas veja.. você tem a lógica que precisa nos outros exercícios.
+# Você precisa de um contador para cada letra, e precisa verificar qual a primeira letra de cada palavra
+# Você tem um contator por letra na função total_letras_alfabeto 
+# E você consegue extrair a primeira letra como extraiu as três primeiras letras em palavras_iniciais_nome
+# A solução está bem perto, é juntar as lógicas.
 def total_letras_iniciais():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
     texto = arquivo.read()
