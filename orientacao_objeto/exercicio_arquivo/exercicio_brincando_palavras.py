@@ -38,6 +38,7 @@ def total_letras_alfabeto():
             print(f'Quantidade da letra {alfabeto[elemento]} é: {contador[elemento]}')
 
 
+# Perfeito! 
 def palavras_iniciais_nome():
     arquivo = open ('palavras.txt', 'r', encoding='utf-8')
     arquivo_letra = open ('palavra_edi.txt', 'w')
