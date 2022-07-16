@@ -1,10 +1,19 @@
+# Neste aqui a sua lógica está certa. Só posso te dar uma dica:
+#     Vejo que você está armazenando todas as palavras em uma lista e depois 
+#     você obtém a conta usando a função len. Isso funciona, mas pense o seguinte:
+#     Como você só quer contar as palavras, você não precisa armazená-las em algum lugar,
+#     já que isso consome memória (e dependendo da qtd de palavras pode até deixar seu código mais lento).
+#     Você literalmente só precisa contá-las. Veja abaixo
 def total_palavras():
     with open ('palavras.txt', 'r', encoding='utf-8') as arquivo:
-        palavras = []
+        # palavras = []
+        total_palavras = 0  # Trocamos a lista por uma variável de contagem
         for linha in arquivo:
-            linha = linha.strip()
-            palavras.append(linha)
-        print('Total de palavras:', (len(palavras)))
+            linha = linha.strip()  # Como só estamos contando, você não precisa se preocupar em usar o strip. Isso é só para quando queremos processar e usar a string de fato
+            # palavras.append(linha)
+            total_palavras = total_palavras + 1  # Para cada linha do arquivo adicionamos 1 na contgem
+        # print('Total de palavras:', (len(palavras)))
+        print('Total de palavras:', (total_palavras))
 
 
 def total_letras_alfabeto():
