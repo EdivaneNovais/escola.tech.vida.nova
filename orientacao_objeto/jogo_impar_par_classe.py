@@ -11,7 +11,7 @@ class Adversario:
     def jogo_impar_par (self):
 
         jogador = input('você quer par ou ímpar?:').lower().strip()
-        while 'impar' and 'par' not in jogador:
+        while 'impar' and 'par' not in jogador:  # Aqui fica a mesma sugestão do exercício sem classe
             erro = input('ERRO, DIGITE CORRETAMENTE SUA ESCOLHA, (PAR OU IMPAR): ').lower().strip()
             jogador = erro
             

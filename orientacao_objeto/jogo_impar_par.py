@@ -23,7 +23,8 @@ print('JOGO ÍMPAR OU PAR')
 print('*' * 18)
 
 jogada = input('você quer par ou ímpar?:').lower().strip()
-while 'impar' and 'par' not in jogada:
+# O melhor jeito de verificar se a jogada não é par nem impar é o seguinte:
+while jogada not in ("par", "impar"):  # Ou ainda daria pra fazer: while jogada != "par" and jogada != "impar"
     erro = input('ERRO, DIGITE CORRETAMENTE SUA ESCOLHA, (PAR OU IMPAR): ').lower().strip()
     jogada = erro
     
