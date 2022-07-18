@@ -56,7 +56,7 @@ salas
 sanas
 sararas
 saras
-saías
+saÃ­as
 sebes
 sedes
 seles
@@ -72,8 +72,8 @@ sonos
 sopapos
 soros
 supus
-sãs
-sós
-à
-é
-ô
+sÃ£s
+sÃ³s
+Ã 
+Ã©
+Ã´
