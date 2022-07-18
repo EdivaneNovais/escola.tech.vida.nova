@@ -23,7 +23,7 @@ print('JOGO ÍMPAR OU PAR')
 print('*' * 18)
 
 jogada = input('você quer par ou ímpar?:').lower().strip()
-while 'impar' and 'par' not in jogada:
+while jogada not in ('par', 'impar'):
     erro = input('ERRO, DIGITE CORRETAMENTE SUA ESCOLHA, (PAR OU IMPAR): ').lower().strip()
     jogada = erro
     
