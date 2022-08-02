@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.2 on win32)" generated="20220728 22:10:08.088" rpa="false" schemaversion="3">
+<suite id="s1" name="Char Marvel" source="C:\Users\edivane.souza\Desktop\escola.tech.vida.nova\teste_software\teste_robot\char_marvel.robot">
+<test id="s1-t1" name="Testar API Marvel Chars" line="8">
+<kw name="Configurar Sessão">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>requisicao_catalogo</arg>
+<arg>https://servicespub.prod.api.aws.grupokabum.com.br</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220728 22:10:08.210" level="INFO">Creating Session using : alias=requisicao_catalogo, url=https://servicespub.prod.api.aws.grupokabum.com.br, headers={'Referer': 'kabum.com.br', 'Content-Type': 'application/json', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20220728 22:10:08.210" endtime="20220728 22:10:08.210"/>
+</kw>
+<status status="PASS" starttime="20220728 22:10:08.209" endtime="20220728 22:10:08.211"/>
+</kw>
+<kw name="Realizar a requisicao no catalogo">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resposta_catalog}</var>
+<arg>requisicao_catalogo</arg>
+<arg>/catalog/v2/releases</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220728 22:10:08.719" level="INFO">GET Request : url=https://servicespub.prod.api.aws.grupokabum.com.br/catalog/v2/releases 
+ path_url=/catalog/v2/releases 
+ headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Referer': 'kabum.com.br', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg timestamp="20220728 22:10:08.738" level="INFO">GET Response : url=https://servicespub.prod.api.aws.grupokabum.com.br/catalog/v2/releases 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/vnd.api+json', 'Content-Length': '84833', 'Connection': 'keep-alive', 'Date': 'Fri, 29 Jul 2022 01:10:08 GMT', 'Server': 'nginx', 'FRONT-X-Request_ID': 'd8ee0c15a43da825db93e9aa93f9a03f', 'Strict-Transport-Security': 'max-age=15552000', 'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, mfa-code, mfa_code, client_id, client-id, session, x-datadome-clientid, basket_id, delivery_uuid, service_provider, zip_code', 'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS, DELETE', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 5920a3bfac98f07157532e113d7695ce.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'GIG51-P1', 'X-Amz-Cf-Id': 'aeUKlfDVKevb2VwdbGkxk_2sV0OH_rDMUH8E9zeTbYFW0I3CH4eB_A=='} 
+ body={"meta":{"total_items_count":129,"total_pages_count":13,"page":{"cursor":"","number":1,"size":10,"is_current_page":true},"breadcrumb":[],"seo":{},"filters":{"bool_filters":[{"name":"has_flash","values":[false],"text":"Flash"},{"name":"has_offer","values":[true,false],"text":"Oferta"},{"name":"has_open_box","values":[false],"text":"Openbox"},{"name":"has_prime","values":[false,true],"text":"Prime"},{"name":"kabum_product","values":[true],"text":"KaBuM!"}],"string_filters":[{"name":"category","values":["Geek","Periféricos","Hardware","Computadores","Áudio","Celular &amp; Smartphone","Games","TV","Cuidados Pessoais","Smart Home"],"text":"Categorias"},{"name":"manufacturer","values":["Lego","Dell","Amd","Galápagos Jogos","XP-Pen","WAAW","Panini","Concordia","Huawei","Intel","Acer","Canon","PCYES","Samsung","Sony","Creality","Epson","Koch Media","LG","NTC","On Press","Philco","Redragon","TP-Link"],"text":"Marcas"}],"number_filters":[{"name":"price","min":12.0,"max":115788.42,"text":"Preço"}]}},"links":{"redirect":null,"first":"/catalog/v2/releases/?page_cursor=Tk9UIElTIFVTRQ==&amp;page_number=1&amp;page_size=10","self":"/catalog/v2/releases/?page_cursor=&amp;page_number=1&amp;page_size=10","last":"/catalog/v2/releases/?page_cursor=Tk9UIElTIFVTRQ==&amp;page_number=13&amp;page_size=10","next":"/catalog/v2/releases/?page_cursor=Tk9UIElTIFVTRQ==&amp;page_number=2&amp;page_size=10"},"data":[{"type":"product","id":367030,"links":{"self":"/catalog/v2/products/367030"},"relationships":{},"attributes":{"menu":"Periféricos/Teclado e Mouse/Mouse com Fio","title":"Mouse Sem Fio Dell, Bluetooth, 1600 DPI, 7 Botões, Cinza Titã - MS5320W","description":"&lt;h2&gt;Trabalhe perfeitamente em seu desktop, laptop e 2 em 1 com este mouse wireless esculpido&lt;/h2&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;Trabalhe perfeitamente em seu desktop, laptop e 2 em 1 com este Mouse Bluetooth esculpido. Os dois m&amp;eacute;todos de conex&amp;atilde;o sem fio de 2,4 GHz e via Bluetooth 5.0 permitem alternar facilmente entre seu laptop, desktop ou 2 em 1 com o clique de um bot&amp;atilde;o. Emparelhe instantaneamente cada dispositivo com seu sistema compat&amp;iacute;vel com Windows 10 por meio de Bluetooth sem precisar definir as configura&amp;ccedil;&amp;otilde;es todas as vezes com o Microsoft Swift Pair. Compat&amp;iacute;vel com diversos sistemas operacionais Windows, Mac, Chrome, Linux e Android, este mouse oferece a m&amp;aacute;xima flexibilidade.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;Trabalhe por mais tempo sem interrup&amp;ccedil;&amp;otilde;es. Com uma bateria que dura at&amp;eacute; 36 meses, este mouse garante que voc&amp;ecirc; n&amp;atilde;o precise se preocupar em trocar a bateria. Se ele apresentar defeitos durante a garantia de tr&amp;ecirc;s anos, o servi&amp;ccedil;o de troca avan&amp;ccedil;ada da Dell entregar&amp;aacute; a voc&amp;ecirc; um mouse substituto. Testado e certificado com os sistemas Dell, este mouse wireless funciona perfeitamente com PCs da Dell, tornando a implementa&amp;ccedil;&amp;atilde;o simples e f&amp;aacute;cil em toda a organiza&amp;ccedil;&amp;atilde;o.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;As respostas r&amp;aacute;pidas por meio do sensor DPI 1600 ajudam voc&amp;ecirc; a navegar sem esfor&amp;ccedil;o, especialmente na tela 4K de alta resolu&amp;ccedil;&amp;atilde;o. O sensor &amp;oacute;ptico oferece um monitoramento preciso e &amp;eacute; ideal para uso na maioria das superf&amp;iacute;cies de mesa. O software Dell Peripheral Manager (DPM)i permite gerenciar seus dispositivos de entrada e ajust&amp;aacute;-los aos DPIs predefinidos de sua prefer&amp;ecirc;ncia: 1.000, 1.600, 2.400 ou 4.000.&lt;/p&gt;","weight":180.0,"price":336.02,"old_price":0.0,"discount_percentage":15,"price_with_discount":285.62,"offer":null,"prime":{"price":325.94,"price_with_discount":277.05,"discount_percentage":2,"save":9.0,"is_logged_user_exclusive":true},"origin":null,"is_prime":true,"is_openbox":false,"has_free_shipping":false,"has_free_shipping_for_prime_user":false,"has_pix_shipping":false,"is_pre_order":false,"date_pre_order":null,"available":true,"species":0,"stock":25,"limit_buy":0,"type":0,"external_url":"","warranty":"1 ano de garantia (9 meses de garantia contratual junto ao fabricante + 3 meses referentes à garantia legal, nos termos do artigo 26, II, do Código de Defesa do Consumidor)","score_of_ratings":0,"number_of_ratings":0,"is_marketplace":false,"marketplace":{},"manufacturer":{"id":1408,"name":"Dell","img":"https://images4.kabum.com.br/produtos/fabricantes/logo-dell.jpg"},"photos":{"p":["https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752792_p.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752789_p.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752790_p.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752791_p.jpg"],"m":["https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752792_m.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752789_m.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752790_m.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752791_m.jpg"],"g":["https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752792_g.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752789_g.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752790_g.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752791_g.jpg"],"gg":["https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752792_gg.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752789_gg.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752790_gg.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752791_gg.jpg"]},"images":["https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752792_original.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752789_original.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752790_original.jpg","https://images.kabum.com.br/produtos/fotos/367030/mouse-sem-fio-dell-bluetooth-1600-dpi-7-botoes-cinza-tita-ms5320w_1658752791_original.jpg"],"tag_description":"","ufs_flash":[]}},{"type":"product","id":366648,"links":{"self":"/catalog/v2/products/366648"},"relationships":{},"attributes":{"menu":"Geek/Colecionáveis/Lego/LEGO Ideas","title":"LEGO Guitarra e Amplificador Ideas Fender Stratocaster, 1074 Peças - 21329","description":"&lt;h2&gt;LEGO Guitarra e Amplificador Ideas Fender Stratocaster&lt;/h2&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;Crie sua pr&amp;oacute;pria guitarra constru&amp;iacute;da com pe&amp;ccedil;as dos anos 70 Fender Stratocaster e amplificador 65 Princeton Reverb com este conjunto LEGO Ideas (21329). Recorde os m&amp;uacute;sicos lend&amp;aacute;rios que tocaram com uma Stratocaster&amp;reg; enquanto recria as curvas ic&amp;ocirc;nicas e acrescenta detalhes aut&amp;ecirc;nticos tais como o bra&amp;ccedil;o tremolo ajust&amp;aacute;vel, chave de capta&amp;ccedil;&amp;atilde;o e chaves de afina&amp;ccedil;&amp;atilde;o. O amplificador para construir tem pain&amp;eacute;is remov&amp;iacute;veis para f&amp;aacute;cil visualiza&amp;ccedil;&amp;atilde;o da placa-m&amp;atilde;e, caixa de resson&amp;acirc;ncia, alto-falante e outros detalhes interiores, e tamb&amp;eacute;m cabos de borracha para ser conectado &amp;agrave; guitarra e pedal.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h2&gt;Pe&amp;ccedil;a Central Marcante&lt;/h2&gt;\n&lt;p&gt;Este conjunto inclui pe&amp;ccedil;as para construir a guitarra em vermelho ou preto, palhetas em 4 cores e um suporte elegante para o modelo de guitarra, para a pe&amp;ccedil;a de exposi&amp;ccedil;&amp;atilde;o ficar assim maravilhosamente completa. Tamb&amp;eacute;m tem um adesivo com o logotipo Fender feito com pe&amp;ccedil;as LEGO para voc&amp;ecirc; colocar em sua guitarra ou amplificador real.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h3&gt;Compre agora no KaBuM!&lt;/h3&gt;","weight":11915.0,"price":1066.29,"old_price":0.0,"discount_percentage":5,"price_with_discount":1012.98,"offer":{"id":"593340","name":"Julho Gamer","reference_banner":"julhogamer","starts_at":1658752140,"ends_at":1659351600,"quantity_available":1,"price":883.16,"price_with_discount":839.0,"discount_percentage":17,"is_logged_user_exclusive":false,"hash_code":"4360a106cf7ff29b8150e44bfe77326b8f18ad93"},"prime":null,"origin":null,"is_prime":false,"is_openbox":false,"has_free_shipping":false,"has_free_shipping_for_prime_user":false,"has_pix_shipping":false,"is_pre_order":false,"date_pre_order":null,"available":true,"species":0,"stock":1,"limit_buy":1,"type":0,"external_url":"","warranty":"3 meses de garantia (correspondente à garantia legal, nos termos do artigo 26, II, do Código de Defesa do Consumidor)","score_of_ratings":0,"number_of_ratings":0,"is_marketplace":false,"marketplace":{},"manufacturer":{"id":1507,"name":"Lego","img":"https://images4.kabum.com.br/produtos/fabricantes/logo-lego.jpg"},"photos":{"p":["https://images.kabum.com.br/produtos/fotos/366648/lego-ideas-fender-stratocaster-1074-pecas-21329_1658923116_p.jpg","https://images.kabum.com.br/produtos/fotos/366648/lego-ideas-fender-stratocaster-1074-pecas-21329_1658923114_p.jpg","https://images.kabum.com.br/pr... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220728 22:10:08.739" level="INFO">${resposta_catalog} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220728 22:10:08.211" endtime="20220728 22:10:08.739"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resposta_catalog}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220728 22:10:08.739" endtime="20220728 22:10:08.740"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${resposta_catalog}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220728 22:10:08.740" level="INFO">${resposta_catalog} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220728 22:10:08.740" endtime="20220728 22:10:08.740"/>
+</kw>
+<status status="PASS" starttime="20220728 22:10:08.211" endtime="20220728 22:10:08.740"/>
+</kw>
+<kw name="validar os campos obrigatorios">
+<kw name="Request Should Be Successful" library="RequestsLibrary">
+<arg>${resposta_catalog}</arg>
+<doc>Fails if response status code is a client or server error (4xx, 5xx).</doc>
+<status status="PASS" starttime="20220728 22:10:08.741" endtime="20220728 22:10:08.741"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${resposta_catalog.json()}[data]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220728 22:10:08.742" level="INFO">Length is 10</msg>
+<status status="PASS" starttime="20220728 22:10:08.741" endtime="20220728 22:10:08.742"/>
+</kw>
+<status status="PASS" starttime="20220728 22:10:08.741" endtime="20220728 22:10:08.743"/>
+</kw>
+<status status="PASS" starttime="20220728 22:10:08.209" endtime="20220728 22:10:08.743"/>
+</test>
+<status status="PASS" starttime="20220728 22:10:08.091" endtime="20220728 22:10:08.744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Char Marvel">Char Marvel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
